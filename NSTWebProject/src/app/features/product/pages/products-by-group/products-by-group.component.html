@@ -1,0 +1,19 @@
+<div class="border border-primary rounded p-4 w-30" style="position: fixed; top: 10; right: 0; width: 25%; max-width: 25%;">
+  <app-shopping-cart></app-shopping-cart>
+</div>
+<div class="row" style="margin-top: 1%;">
+      <div class="col-md-5" *ngFor="let product of products">
+
+        <div class="product-top">
+        <label style="padding-left: 22%; padding-top: 2%; font-size: 20px; width: 300px; "><strong>{{product.price}} dinara</strong> </label>
+         <img class="border border-success rounded" src="{{product.productImgPath}}" alt="Nema slike" >
+          <div class="product-bottom" style="padding-top: 1%;">
+          <button pButton type="button" label="Dodaj u korpu" icon="pi pi-shopping-cart" (click)="addItem(product.productId)"></button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+   <!-- </div> -->
+
+

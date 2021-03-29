@@ -1,0 +1,27 @@
+<div class="border border-primary rounded p-4 w-30" style="position: fixed; top: 10; right: 0;">
+  <app-shopping-cart></app-shopping-cart>
+</div>
+<div class="row">
+<!-- <div *ngFor="let group of listOfGroups"> -->
+   <div class="col-md-5" *ngFor="let group of listOfGroups">
+      <div class="product-top">
+
+      <img class="border border-success rounded" src="{{group.groupImgPath}}" alt="Nema slike" >
+        <div class="overlay">
+        <button pButton type="button" label="Add to cart" icon="pi pi-shopping-cart"></button>
+        </div>
+      </div>
+      <div class="product-bottom text-center">
+            {{group.name}}
+      </div>
+    </div>
+  </div>
+
+ <!-- </div> -->
+
+
+
+
+
+
+

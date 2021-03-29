@@ -1,0 +1,55 @@
+<div class="d-flex justify-content-center" style="margin-top: 150px;">
+  <div class="border border-success rounded p-4 w-50">
+    <div class="p-field p-grid">
+      <div class="p-col p-float-label">
+        <input
+          [(ngModel)]="username"
+          id="username"
+          type="text"
+          pInputText
+          style="width: 99.9%"
+        />
+        <label for="username" class="p-col-fixed" style="width: 84%"
+          >Username</label
+        >
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <div class="p-col p-float-label" style="margin-top: 8%">
+        <input
+          [(ngModel)]="password"
+          id="password"
+          type="password"
+          pInputText
+          style="width: 99.9%"
+        />
+        <label for="password" class="p-col-fixed" style="width: 84%"
+          >Password</label
+        >
+      </div>
+    </div>
+    <br />
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+      <div>
+        <button
+          pButton
+          type="button"
+          (click)="login()"
+          label="Login"
+          icon="pi pi-sign-in"
+
+        ></button>
+      </div>
+      <div>
+        <button
+          pButton
+          type="button"
+          routerLink="/signup"
+          label="Sign-up"
+          icon="pi pi-user-plus"
+
+        ></button>
+      </div>
+    </div>
+  </div>
+</div>
