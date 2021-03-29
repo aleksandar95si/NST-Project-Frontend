@@ -39,11 +39,6 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("user",this.username)
         this.loggedIn=true;
         this.router.navigate(['home'])
-       console.log(this.authTokenService.isLoggedIn())
-        // ...any login logic- cookies and all the good stuff goes here
-          //this.isLoggedIn = true;
-          console.log(response);
-          console.log(this.authTokenService.getAccesToken());
       },
       error => {
           //this.isLoggedIn = false;
@@ -52,27 +47,5 @@ export class LoginComponent implements OnInit {
           console.log(error);
       });
 }
-
- /*
-  getProducts(): Observable<Object>{
-
-
-
-    const httpOption = {
-      headers: new HttpHeaders({
-         //'Content-Type': 'multipart/form-data',
-          //'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorization': 'Bearer ' + this.authToken
-      })
-  };
-
-    return this.http.get("http://localhost:8081/products/3", httpOption);
-  }
-
-  consoleProducts(): void{
-    this.getProducts().subscribe(res => console.log(res));
-
-  }
-  */
 
 }

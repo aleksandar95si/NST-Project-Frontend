@@ -25,7 +25,7 @@ export class MenuComponent implements OnInit {
         {
             label: 'Dijetetski suplementi',
             icon: "pi pi-directions",
-           // routerLink: "/products/Dijetetski suplementi",
+            //routerLink: "/products/Dijetetski suplementi",
             command: (event => this.router.navigateByUrl('/products', { skipLocationChange: true }).then(() => {
               this.router.navigate(['products/Dijetetski suplementi']);
           }) )

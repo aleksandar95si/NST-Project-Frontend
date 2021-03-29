@@ -34,7 +34,7 @@ export class AuthTokenService {
          .replace('{2}', username)
          .replace('{3}', password);
 
-      console.log(body);
+     // console.log(body);
 
      return this.http.post<AuthToken>(oauth2_token_endpoint, body, httpOptions);
  }
