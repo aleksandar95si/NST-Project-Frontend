@@ -39,7 +39,8 @@ export class ProductsByGroupComponent implements OnInit, OnDestroy {
   getProductsByGroupName() {
     this.productService.getProductsByGroupName(this.groupName).subscribe(response => {
       this.products=response
-    })
+
+    }, error => {} )
   }
 
    addItem(productId: number) {
