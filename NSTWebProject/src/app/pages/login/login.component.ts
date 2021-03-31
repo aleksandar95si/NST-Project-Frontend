@@ -28,9 +28,6 @@ export class LoginComponent implements OnInit {
 
 
  login(): void {
-
-  console.log(this.username, " ", this.password)
-
   this.authTokenService.getAccessTokenFromServer(this.username, this.password).subscribe(
       response => {
         this.authTokenService.setAuthToken(response.access_token)
@@ -41,8 +38,6 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['home'])
       },
       error => {
-          //this.isLoggedIn = false;
-         // localStorage.setItem("isLoggedIn", "false")
          this.authTokenService.setLoggedIn(false)
           console.log(error);
       });

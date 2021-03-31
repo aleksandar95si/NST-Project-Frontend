@@ -55,12 +55,12 @@ export class MenuComponent implements OnInit {
        }) )
     },
     {
-      label: 'Zdrava hrana',
-      icon: "pi pi-directions",
-      routerLink: "/products/Zdrava hrana",
-      command: (event => this.router.navigateByUrl('/products', { skipLocationChange: true }).then(() => {
-        this.router.navigate(['products/Zdrava hrana']);
-     }) )
+  },
+  {
+  },
+  {
+  },
+  {
   },
   {
   },
