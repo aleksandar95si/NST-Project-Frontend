@@ -26,7 +26,6 @@ export class ProductsByGroupComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.routeSub=this.router.params.subscribe(params => {
       this.groupName=params["groupName"]
-
     })
     this.getProductsByGroupName()
   }

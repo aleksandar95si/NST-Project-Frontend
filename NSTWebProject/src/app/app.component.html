@@ -1,15 +1,11 @@
-
 <app-menu *ngIf="loggedUser"></app-menu>
-<!-- <app-menu></app-menu> -->
-<!-- style="min-width: 768px;" -->
- <!-- <div style="background-color: seagreen; height: 1000px; width: 10000px;"> -->
 
-    <div class="container">
-    <router-outlet></router-outlet>
-     </div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
 
-      <footer *ngIf="loggedUser" class="jumbotron bg-success text-white text-cente" style="border-radius: 0px; margin-bottom: 0%; margin-top: 1.5%; width: 100%; padding-top: 2%; padding-bottom: 2%; position: absolute;">
-        <h6 style="font-family: Brush Script MT" style="padding-left: 38%;">Pharmacy Shop &copy; by Aleksandar Ristić, 2021</h6>
-      </footer>
+<footer *ngIf="loggedUser" class="jumbotron bg-success text-white text-cente" style="border-radius: 0px; margin-bottom: 0%; margin-top: 1.5%; width: 100%; padding-top: 2%; padding-bottom: 2%; position: absolute;">
+  <h6 style="font-family: Brush Script MT" style="padding-left: 38%;">Pharmacy Shop &copy; by Aleksandar Ristić, 2021</h6>
+</footer>
 
-<!-- </div> -->
+

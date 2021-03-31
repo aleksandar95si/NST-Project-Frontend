@@ -10,19 +10,17 @@ import { AuthToken } from '../model/auth-token';
 export class AuthTokenService {
 
   authToken?: string;
-  private loggedIn=false;
 
   constructor(private http : HttpClient) { }
 
   getAccessTokenFromServer(username: string, password: string): Observable<AuthToken> {
 
     let oauth2_token_endpoint = 'http://localhost:8282/oauth/token';
-    let oauth2_client_id = 'cart';
-    let oauth2_client_secret = 'cartpass';
+    let oauth2_client_id = 'frontend';
+    let oauth2_client_secret = 'pass';
 
      const httpOptions = {
          headers: new HttpHeaders({
-            //'Content-Type': 'multipart/form-data',
              'Content-Type': 'application/x-www-form-urlencoded',
              'Authorization': 'Basic ' + btoa(oauth2_client_id + ':' + oauth2_client_secret)
          })
@@ -45,14 +43,6 @@ export class AuthTokenService {
 
   setAuthToken (authToken: string){
     this.authToken=authToken;
-  }
-
-  isLoggedIn(): boolean {
-    return this.loggedIn;
-  }
-
-  setLoggedIn(loggedIn: boolean) {
-    this.loggedIn=loggedIn;
   }
 
   checkLog() {

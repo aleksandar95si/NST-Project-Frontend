@@ -6,7 +6,7 @@ import { AuthTokenService } from '../services/auth-token.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class SignupGuard implements CanActivate {
 
   constructor(private authTokenService: AuthTokenService, private router: Router) {}
 
@@ -14,10 +14,11 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-      if(!this.authTokenService.checkLog()) {
-        return this.router.parseUrl("/login");
+      if(this.authTokenService.checkLog()) {
+        return this.router.parseUrl("/home");
       }
 
-      return true
-    }
+    return true;
+  }
+
 }

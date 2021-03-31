@@ -12,9 +12,7 @@ export class ProductHomeComponent implements OnInit {
   listOfGroups: ProductGroup[];
   private routeSub:any;
 
-
   constructor(private productService: ProductService) { }
-
 
   ngOnInit(): void {
     this.getAllGroups();

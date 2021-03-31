@@ -5,7 +5,7 @@ export interface CartItem {
   itemId?: number;
   productId?: number;
   productName?: string;
-  price: number;
+  price?: number;
   shoppingCart?: ShoppingCart;
 
 }

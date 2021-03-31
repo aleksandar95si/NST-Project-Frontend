@@ -9,13 +9,13 @@ import {InputTextModule} from 'primeng/inputtext';
 import { UserService } from './services/user.service';
 import { ProductPipe } from './pipes/product.pipe';
 import { ProductGroupPipe } from './pipes/product-group.pipe';
-import { ShoppingCartPipe } from './pipes/shopping-cart.pipe';
 import { BillPipe } from './pipes/bill.pipe';
+import { SignupGuard } from './guards/signup.guard';
 
 
 
 @NgModule({
-  declarations: [ProductPipe, ProductGroupPipe, ShoppingCartPipe, BillPipe],
+  declarations: [ProductPipe, ProductGroupPipe, BillPipe],
   imports: [
     CommonModule,
     FormsModule,
@@ -31,12 +31,12 @@ import { BillPipe } from './pipes/bill.pipe';
     InputTextModule,
     ProductPipe,
     ProductGroupPipe,
-    ShoppingCartPipe,
     BillPipe
   ],
   providers: [
     AuthTokenService,
     AuthGuard,
+    SignupGuard,
     UserService
   ]
 })

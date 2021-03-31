@@ -10,13 +10,9 @@ import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.servi
   styleUrls: ['./shopping-cart.component.scss']
 })
 export class ShoppingCartComponent implements OnInit {
-/*
-  @Input() set cart(productId: number) {
-    this.getShoppingCart()
-  }*/
 
   shoppingCart: ShoppingCart;
-  cartItem: CartItem;
+  cartItem?: CartItem;
   listOfCartItems: CartItem[]
 
   constructor(private shoppingCartService: ShoppingCartService, private orderService: OrderService) { }
@@ -28,7 +24,7 @@ export class ShoppingCartComponent implements OnInit {
   getShoppingCart() {
       this.shoppingCartService.getShoppingCart().subscribe(response => {
         this.shoppingCart=response;
-        this.listOfCartItems=response.cartItem
+        this.listOfCartItems=response?.cartItem
       })
   }
 

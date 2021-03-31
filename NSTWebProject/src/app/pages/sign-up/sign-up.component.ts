@@ -28,7 +28,9 @@ export class SignUpComponent implements OnInit {
   }
 
   addNewUser() {
-      this.userService.saveUser(this.userForm.value).subscribe()
-      this.router.navigate(["/login"])
+      this.userService.saveUser(this.userForm.value).subscribe(
+        response => this.router.navigate(["/login"]),
+        error => console.log(error))
+
   }
 }

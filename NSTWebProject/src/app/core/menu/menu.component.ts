@@ -25,7 +25,6 @@ export class MenuComponent implements OnInit {
         {
             label: 'Dijetetski suplementi',
             icon: "pi pi-directions",
-            //routerLink: "/products/Dijetetski suplementi",
             command: (event => this.router.navigateByUrl('/products', { skipLocationChange: true }).then(() => {
               this.router.navigate(['products/Dijetetski suplementi']);
           }) )
@@ -33,7 +32,6 @@ export class MenuComponent implements OnInit {
         {
             label: 'Dermokozmetika',
             icon: 'pi pi-directions',
-            routerLink: "/products/Dermokozmetika",
             command: (event => this.router.navigateByUrl('/products', { skipLocationChange: true }).then(() => {
               this.router.navigate(['products/Dermokozmetika']);
            }) )
@@ -41,7 +39,6 @@ export class MenuComponent implements OnInit {
         {
           label: 'Bebe i deca',
           icon: "pi pi-directions",
-          routerLink: "/products/Bebe i deca",
           command: (event => this.router.navigateByUrl('/products', { skipLocationChange: true }).then(() => {
             this.router.navigate(['products/Bebe i deca']);
          }) )
@@ -49,7 +46,6 @@ export class MenuComponent implements OnInit {
       {
         label: 'Lična higijena',
         icon: "pi pi-directions",
-        routerLink: "/products/Lična higijena",
         command: (event => this.router.navigateByUrl('/products', { skipLocationChange: true }).then(() => {
           this.router.navigate(['products/Lična higijena']);
        }) )
@@ -73,9 +69,9 @@ export class MenuComponent implements OnInit {
   {
   },
   {
-  label: `${localStorage.getItem('user')}`,
-  icon: "pi pi-user"
-},
+      label: `${localStorage.getItem('user')}`,
+      icon: "pi pi-user"
+  },
     {
       label: 'Logout',
       icon: 'pi pi-sign-out',
@@ -87,8 +83,6 @@ export class MenuComponent implements OnInit {
     ];
 }
     logout() {
-      //this.user.logout().subscribe(response => {console.log("Izlogovan")
       localStorage.clear()
-
     }
 }
