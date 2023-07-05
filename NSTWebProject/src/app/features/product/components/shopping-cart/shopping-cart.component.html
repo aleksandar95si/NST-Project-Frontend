@@ -4,7 +4,7 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item d-flex justify-content-between align-items-center border-0 "
       *ngFor="let item of listOfCartItems">
-      <button pButton type="button" label="" icon="pi pi-times" (click)="deleteItem(item.itemId)" style="background-color: red; size: 20;"></button>
+      <button pButton type="button" label="" icon="pi pi-times" (click)="deleteItem(item.productId)" style="background-color: red; size: 20;"></button>
         <span style="margin-left: 10px;">{{item.productName}}</span>
         <span>{{item.price}} dinara</span>
       </li>
@@ -13,7 +13,7 @@
         <div>
         <strong style="margin-left: 20px;">Ukupan iznos: </strong>
       </div>
-        <span><strong style="margin-right: 20px;">{{shoppingCart | bill}} dinara</strong></span>
+        <span><strong style="margin-right: 20px;">{{getSum()}} dinara</strong></span>
       </li>
     </ul>
 

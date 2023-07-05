@@ -9,7 +9,7 @@ import { ProductGroup } from '../model/product-group';
 })
 export class ProductService {
 
-  baseEndpointUrl="http://localhost:8081/products/";
+  baseEndpointUrl="http://localhost:8000/products-api/";
 
 
 
@@ -17,7 +17,7 @@ export class ProductService {
   }
 
   getProductsByGroupName(groupName: string): Observable<Product[]>{
-    return this.http.get<Product[]>(this.baseEndpointUrl+"group/"+groupName, {headers: {"Authorization": `Bearer ${localStorage.getItem("token")}`}})
+    return this.http.get<Product[]>(this.baseEndpointUrl+"products/category/"+groupName, {headers: {"Authorization": `Bearer ${localStorage.getItem("token")}`}})
   }
 
   getAllGroups(): Observable<ProductGroup[]>{

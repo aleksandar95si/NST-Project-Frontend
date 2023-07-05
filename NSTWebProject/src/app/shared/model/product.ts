@@ -6,6 +6,8 @@ export interface Product {
   name: string;
   price: number;
   productImgPath: string;
-  productGroup: ProductGroup;
+  productCategory: ProductGroup;
+  availableAmount: number;
+  reservedAmount: number;
 
 }

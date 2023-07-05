@@ -14,6 +14,7 @@ export class ShoppingCartComponent implements OnInit {
   shoppingCart: ShoppingCart;
   cartItem?: CartItem;
   listOfCartItems: CartItem[]
+  bill: number = 0;
 
   constructor(private shoppingCartService: ShoppingCartService, private orderService: OrderService) { }
 
@@ -22,10 +23,7 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   getShoppingCart() {
-      this.shoppingCartService.getShoppingCart().subscribe(response => {
-        this.shoppingCart=response;
-        this.listOfCartItems=response?.cartItem
-      })
+      this.listOfCartItems = this.shoppingCartService.getShoppingCartItems();
   }
 
   getItem(itemId: number) {
@@ -34,10 +32,15 @@ export class ShoppingCartComponent implements OnInit {
       })
   }
 
-  deleteItem(itemId: number) {
-      this.shoppingCartService.deleteItem(itemId).subscribe(response => {
-        this.getShoppingCart()
-      })
+  getSum() : number {
+    let sum = 0;
+    for(let i = 0; i < this.listOfCartItems.length; i++) {
+      sum += this.listOfCartItems[i].price;
+    }
+    return sum;
+  }
+  deleteItem(productId: number) {
+      this.shoppingCartService.deleteShoppingCartItem(productId);
 
   }
 
@@ -46,7 +49,7 @@ export class ShoppingCartComponent implements OnInit {
  }
 
  submitOrder() {
-      this.orderService.submitOrder().subscribe(response => {});
+      this.orderService.submitOrder(this.listOfCartItems, this.getSum()).subscribe(response => {});
  }
 
 }

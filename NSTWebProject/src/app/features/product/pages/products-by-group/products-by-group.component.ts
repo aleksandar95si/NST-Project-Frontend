@@ -43,7 +43,7 @@ export class ProductsByGroupComponent implements OnInit, OnDestroy {
   }
 
    addItem(productId: number) {
-    this.shoppingCartService.addItem(productId).subscribe(response => {this.childCart.getShoppingCart()})
+      this.shoppingCartService.addItemToShoppingCart(productId);
    }
 
 
